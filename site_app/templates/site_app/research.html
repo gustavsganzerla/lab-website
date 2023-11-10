@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Wildlife Surveillance
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Wildlife is a reservoir for infectious agents</strong><br>
+          A natural hotspot for agents that cause infectious diseases is the wildlife. For better monitoring potential changes in wildlife that may cause potential spillover events, we have partnered up with institutions in Eastern Africa to perform field work in collecting samples and immunizing animals. Currently, we have active work being done in <b>Rwanda</b> and <b>Democratic Republic of the Congo</b>.<br>
+          Samples are constantly collected and investigated to observe if there are any ongoing signals of infection in cattle, sheep, and goats. We make use of state-of-the-art technology such as Artificial Intelligence and Single Cell RNA-sequencing to perform these investigations
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Drug Repurposing
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Early Diagnostic Tools
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>We can use Artificial Intelligence to predict the outcome of patients</strong><br>
+          Artificial Intelligence (AI) can find hidden patterns in complex data. We have partnered up with hospitals in <b>Ireland </b>, <b>Spain </b>, and <b>USA </b> to obtain samples from patients undergoing dysregulated immune responses caused by infectious agents. After processing these samples in our laboratory facilities, we quantify the amount of circulatory level of proteins of interest and expression level of certain genes. AI helps us to use the collected data to come up with predictions on outcome and level of severity of patients.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Bioinformatics Tools
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>We are constantly creating new tools to assist a wide range of biologists.</strong><br> 
+            The need for tailored bioinformatics pipelines arises when processing biological data decreases in costs. With this in mind, our lab is constantly creating new tools to assist different professionals of the life sciences to better extract meaningful information on their data. By having an open-source development mind, all of our tools are freely accessible.
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}

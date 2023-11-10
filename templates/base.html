@@ -16,6 +16,15 @@
     max-width: 1650px; 
   }
 
+  small {
+    font-size: 80%; /* Adjust the percentage as needed */
+    line-height: 1; /* Adjust the line height as needed */
+}
+
+.your-container p {
+    margin-bottom: 6px; /* Adjust the value as needed */
+  }
+
 
 
 </style>
@@ -31,14 +40,14 @@
 
 <nav class="navbar avbar-light navbar-expand-lg" style="background-color: #F0F8FF;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kelvin Lab</a>
+        <a class="navbar-brand" href="{%url 'site_app:home'%}">Kelvin Lab</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav align-items-start"> <!-- Use align-items-start class -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Research</a>
+                    <a class="nav-link" href="{%url 'site_app:research'%}">Research</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Publications</a>
@@ -87,15 +96,15 @@
     </div>
     </body>
   
-    <footer class="bg-secondary text-black text-left" style="background-color: #F0F8FF !important;">
+    <footer class="bg-secondary text-black text-center" style="background-color: #F0F8FF !important;">
+        <img src="{% static 'images/dal_fm.png' %}" alt="DalFM" width="200" height="120"> 
+        <div class="your-container">
+            <p>Laboratory of Emerging Infectious Diseases</p>
+            <p>Microbiology & Immunology</p>
+            <p>Dalhousie University</p>
+          </div>
 
-      <p>Kelvin Lab</p>
-      <p>Laboratory of Emerging Infectious Diseases</p>
-      <p>Microbiology & Immunology</p>
-      <p>Dalhousie University</p>
-
-      
-
-      
-      
-  </footer>
+           
+    </footer>
+    
+    
