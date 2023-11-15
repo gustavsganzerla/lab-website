@@ -7,3 +7,6 @@ def home(request):
 
 def research(request):
     return render(request, 'site_app/research.html')
+
+def publications(request):
+    return render(request, 'site_app/publications.html')
