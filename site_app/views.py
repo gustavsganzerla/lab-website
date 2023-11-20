@@ -10,3 +10,6 @@ def research(request):
 
 def publications(request):
     return render(request, 'site_app/publications.html')
+
+def team(request):
+    return render(request, 'site_app/team.html')

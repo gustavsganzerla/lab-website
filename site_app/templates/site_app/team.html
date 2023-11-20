@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Team</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color: #F0F8FF; /* Alice Blue */
+                color: #333;
+                text-align: center;
+                padding: 1em;
+            }
+    
+            .team-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 2em;
+            }
+    
+            .team-member {
+                position: relative;
+                width: 300px;
+                margin: 1em;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }
+    
+            .team-member img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+    
+            .member-details {
+                padding: 1em;
+            }
+    
+            h3, p {
+                margin: 0;
+            }
+    
+            .popup-box {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .popup-content {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                position: relative;
+            }
+    
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<body>
+
+    <div style="text-align: center;">
+        <p><b>Our amazing team</b></p>
+    </div>
+    <!-- First Team Member Section -->
+    <section class="team-section">
+        <!-- PI -->
+        <div class="team-member" onclick="showPopup('David J Kelvin', 'Principal Investigator', 'john@example.com', 'John is an experienced developer with a passion for creating innovative solutions.')">
+            <img src="{% static 'images/pic_david.avif' %}" alt="pic_david">
+            <div class="member-details">
+                <h3>David J Kelvin</h3>
+                <p>Principal Investigator</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Postdocs -->
+    <section class="team-section">
+
+        <div class="team-member" onclick="showPopup('Anuj Kumar', 'Postdoctoral Researcher', 'jane@example.com', 'Anuj is a passionate bioinformatician deeply involved in screening potential therapeutics for emerging infectious diseases. He excels in utilizing high-throughput data, employing cutting-edge computational methods to drive insights for effective treatment development.')">
+            <img src="{% static 'images/pic_anuj.jpeg' %}" alt="pic_anuj">
+            <div class="member-details">
+                <h3>Anuj Kumar</h3>
+                <p>Postdoctoral Researcher</p>
+            </div>
+        </div>
+        <div class="team-member" onclick="showPopup('Gustavo Sganzerla Martinez', 'Postdoctoral Researcher', 'gustavo.sganzerla@dal.ca', 'Gustavo sits on the very intersection of a Venn diagram in which one side is biology and the other is computer programming.')">
+            <img src="{% static 'images/pic_gustavo.JPG' %}" alt="pic_gustavo"> 
+            <div class="member-details">
+                <h3>Gustavo Sganzerla Martinez</h3>
+                <p>Postdoctoral Researcher</p>
+            </div>
+        </div>
+        <div class="team-member" onclick="showPopup('Pacifique Ndishimye', 'Postdoctoral Researcher', 'jane@example.com', 'Jane is a creative designer with an eye for detail.')">
+            <img src="{% static '' %}" alt=""> 
+            <div class="member-details">
+                <h3>Pacifique Ndishimye</h3>
+                <p>Postdoctoral Researcher</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Grad Students -->
+    <section class="team-section">
+        <div class="team-member" onclick="showPopup('Ali Toloue', 'PhD Candidate', 'jane@example.com', 'Ali is a PhD student, bridging the gap between host immune response in ICU patients and the transformative power of data science and genomics in understanding sepsis and COVID-19.')">
+            <img src="{% static 'images/pic_ali.jpg' %}" alt="pic_ali"> 
+            <div class="member-details">
+                <h3>Ali Toloue</h3>
+                <p>PhD Candidate</p>
+            </div>
+        </div>
+
+        <div class="team-member" onclick="showPopup('Benjamin Hewins', 'Masters Candidate', 'jane@example.com', 'Ben is most interested in understanding how characteristics of human health act as predictors of infectious disease outcome.')">
+            <img src="{% static 'images/pic_ben.jpg' %}" alt="pic_ben">
+            <div class="member-details">
+                <h3>Benjamin Hewins</h3>
+                <p>Masters Candidate</p>
+            </div>
+        </div>
+
+        <div class="team-member" onclick="showPopup('Brigitte Umutoni', 'PhD Candidate', 'gustavo.sganzerla@dal.ca', 'Brigitte is passionate about engaging in research, specifically within the fields of epidemiology and public health. Her motivation stems from the desire to contribute to improving the life of people through a multidisciplinary approach.')">
+            <img src="{% static 'images/pic_brigitte.jpeg' %}" alt="pic_brigitte"> 
+            <div class="member-details">
+                <h3>Brigitte Umutoni</h3>
+                <p>PhD Candidate</p>
+            </div>
+        </div>
+
+        
+    </section>
+
+        <!-- Others -->
+    <section class="team-section">
+        <div class="team-member" onclick="showPopup('Mansi Dutt', 'Bioinformatics Especiallist', 'jane@example.com', 'Mansi, a computational biologist, specializes in analyzing molecular-level biological data using bioinformatics tools like Bulk RNA-Seq and Single-cell sequencing, with a primary focus on CADD for screening potential inhibitors against emerging diseases.')">
+            <img src="{% static 'images/pic_mansi.png' %}" alt="pic_mansi"> 
+            <div class="member-details">
+                <h3>Mansi Dutt</h3>
+                <p>Bioinformatics Especialist</p>
+            </div>
+        </div>
+
+        <div class="team-member" onclick="showPopup('Motiur Rahman', '-', 'jane@example.com', 'Jane is a creative designer with an eye for detail.')">
+            <img src="member2.jpg" alt="Team Member 2">
+            <div class="member-details">
+                <h3>Motiur Rahman</h3>
+                <p>-</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Popup Box -->
+    <div id="popupBox" class="popup-box" onclick="hidePopup()">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <span class="close-btn" onclick="hidePopup()">&times;</span>
+            <h3 id="popupName"></h3>
+            <p id="popupPosition"></p>
+            <p id="popupEmail"></p>
+            <p id="popupBio"></p>
+            <button class="close-btn" onclick="hidePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(name, position, email, bio) {
+            document.getElementById('popupName').innerText = name;
+            document.getElementById('popupPosition').innerText = 'Position: ' + position;
+            document.getElementById('popupEmail').innerText = 'Email: ' + email;
+            document.getElementById('popupBio').innerText = bio;
+            document.getElementById('popupBox').style.display = 'flex';
+        }
+
+        function hidePopup() {
+            document.getElementById('popupBox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+{% endblock %}
